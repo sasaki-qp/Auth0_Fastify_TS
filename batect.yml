@@ -1,0 +1,32 @@
+containers:
+  my-container:
+    image: alpine:3.11.3
+  fastify-ts-base:
+    image: node:14.3.0
+    volumes:
+      - local: .
+        container: /code
+        options: cached
+      - type: cache
+        name: node_modules
+        container: /code/node_modules
+    working_directory: /code
+
+
+tasks:
+
+  install:
+    description: Install fastify application
+    run:
+      container: fastify-ts-base
+      command: npm install
+
+  start:dev:
+    description: Run fastify application --dev
+    run:
+      environment:
+        PORT: 3030
+      container: fastify-ts-base
+      command: npm run dev
+      ports:
+        - 3030:3030

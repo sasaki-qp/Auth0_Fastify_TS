@@ -1,0 +1,11 @@
+// code
+
+$ npm install --save
+$ npm install --dev webpack webpack-cli webpack-node-externals ts-loader tsconfig-paths-webpack-plugin
+
+//batect
+
+$ chmod +x batect.
+$ ./batect --list-tasks
+$ ./batect install
+$ ./batect start:dev

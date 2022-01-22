@@ -1,0 +1,50 @@
+{
+  "name": "fastify-ts-base",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "ENV=test tap --no-ts --node-arg=--require=tsconfig-paths/register --node-arg=--require=ts-node/register --reporter=spec src/test/**/**/*.test.ts",
+    "start": "node ./dist/main.js",
+    "dev": "webpack --watch & nodemon dist/main.js",
+    "build": "webpack",
+    "check": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sinclair/typebox": "^0.21.2",
+    "@types/axios": "^0.14.0",
+    "@types/pg": "^8.6.1",
+    "express": "^4.17.2",
+    "express-openid-connect": "^2.5.2",
+    "fastify": "^3.0.0",
+    "fastify-autoload": "^3.3.1",
+    "fastify-cli": "^2.13.0",
+    "fastify-cors": "^6.0.2",
+    "fastify-plugin": "^3.0.0",
+    "fastify-sensible": "^3.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.1",
+    "pino-pretty": "^7.2.0",
+    "ts-loader": "^9.2.6",
+    "tsconfig-paths-webpack-plugin": "^3.5.2",
+    "webpack": "^5.64.3",
+    "webpack-cli": "^4.9.1",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/jwk-to-pem": "^2.0.1",
+    "@types/node": "^16.11.9",
+    "fastify-auth0-verify": "^0.7.0",
+    "pino": "^6.13.3",
+    "tap": "^15.0.9",
+    "typescript": "^4.5.2"
+  }
+}
